@@ -13,12 +13,14 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+
+app.use("", (_, res) => {
+  res.send("<h1>Bem vindo ao backend do happy</h1>");
+});
+
 app.use(routes);
 app.use("/uploads", express.static(path.resolve(__dirname, "..", "uploads")));
 app.use(erroHandler);
-
-app.use("/", (_, res) => {
-  res.send("<h1>Bem vindo ao backend do happy</h1>");
-});
 
 app.listen(process.env.PORT || 3333);
