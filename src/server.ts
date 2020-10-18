@@ -14,9 +14,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
-app.use("/home", (_, res) => {
-  res.send("<h1>Bem vindo ao backend do happy</h1>");
+app.use("/info", (_, res) => {
+  console.log(process.env);
+  res.status(200).json({
+    message: "OK",
+  });
 });
 
 app.use(routes);
