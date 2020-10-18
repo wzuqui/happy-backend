@@ -17,4 +17,8 @@ app.use(routes);
 app.use("/uploads", express.static(path.resolve(__dirname, "..", "uploads")));
 app.use(erroHandler);
 
-app.listen(3333);
+app.use("/", (_, res) => {
+  res.send("<h1>Bem vindo ao backend do happy</h1>");
+});
+
+app.listen(process.env.PORT || 3333);
