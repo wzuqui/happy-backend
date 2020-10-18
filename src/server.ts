@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 
-app.use("", (_, res) => {
+app.use("/home", (_, res) => {
   res.send("<h1>Bem vindo ao backend do happy</h1>");
 });
 
